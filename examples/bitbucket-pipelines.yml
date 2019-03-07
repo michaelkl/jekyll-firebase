@@ -1,0 +1,14 @@
+image: michaelkl/jekyll-firebase
+
+pipelines:
+  branches:
+    production:
+      - step:
+          name: Build and Deploy to Firebase
+          deployment: production
+          script:
+            - bundle install
+            - bundle exec jekyll build
+            - firebase deploy --token=$FIREBASE_TOKEN --non-interactive
+          artifacts:
+            - _site/**
