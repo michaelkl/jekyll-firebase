@@ -17,6 +17,7 @@ RUN gem clean \
         jekyll jekyll-feed jekyll-gist jekyll-gzip \
         jekyll-paginate jekyll-sitemap jekyll-category-pages \
         minima jekyll-theme-hydeout \
+        etc webrick \
  && rm -rf /usr/lib/ruby/gems/*/cache/*.gem
 
 RUN npm install -g firebase-tools
